@@ -1,6 +1,7 @@
-.white-text{
-  color: white;
+.container {
+  margin-top: 30px;
 }
-h3{
-  color: darkblue;
+
+p {
+  color: blue;
 }
