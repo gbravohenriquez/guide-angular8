@@ -2,11 +2,11 @@ import {
   AfterContentChecked,
   AfterContentInit, AfterViewChecked, AfterViewInit,
   Component,
-  DoCheck,
+  DoCheck, ElementRef,
   Input,
   OnChanges, OnDestroy,
   OnInit,
-  SimpleChanges,
+  SimpleChanges, ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 
@@ -23,9 +23,9 @@ export class ServerElementComponent implements OnInit,
   AfterContentChecked,
   AfterViewInit,
   AfterViewChecked,
-OnDestroy {
+  OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content: string};
-
+  @ViewChild('heading') header: ElementRef;
   constructor() {
     console.log('contructor');
   }
@@ -37,6 +37,7 @@ OnDestroy {
 
   ngOnInit() {
     console.log('init');
+    console.log('header: ' + this.header.nativeElement.textContent);
   }
   ngDoCheck() {
     console.log('ngDoCheck');
@@ -52,6 +53,7 @@ OnDestroy {
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit');
+    console.log('header: ' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked() {
