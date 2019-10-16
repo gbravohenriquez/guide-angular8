@@ -18,4 +18,12 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit() {
   }
 
+  agregaIngrediente(ingrediente: Ingredient) {
+    this.ingredients.push(ingrediente);
+  }
+
+  limpiarLista() {
+    this.ingredients = [];
+  }
+
 }
